@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns		= "http://www.w3.org/ns/widgets"
+	xmlns:gap	= "http://phonegap.com/ns/1.0"
+	id		= "com.pdmedialab.contacts"
+	version 	= "1.0.0">
+
+	<name>PDmediaLAb Contacts App</name>
+
+	<description>
+		A directory of mediaLAB employees for internal usage.
+	</description>
+
+	<author href="http://pdmedialab.com"
+		email="sean.winter@pressdemocrat.com">
+		Sean Winter
+	</author>
+
+	<icon src="icon.png" gap:role="default" />
+
+	<feature name="http://api.phonegap.com/1.0/geolocation"/>
+	<feature name="http://api.phonegap.com/1.0/network"/>
+	<feature name="http://api.phonegap.com/1.0/camera"/>
+
+	<preference name="orientation" value="portrait" />
+	<preference name="fullscreen" value="true" />
+</widget>
