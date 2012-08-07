@@ -8,6 +8,7 @@
 		<phone-1>707-526-8684</phone-1>
 		<phone-2>347-754-2839</phone-2>
 		<email>sean.winter@pressdemocrat.com</email>		
+		<pic>seanwinter.jpg</pic>
 	</entry>
 	<entry id="2">
 		<f-name>Tomas</f-name>
@@ -16,6 +17,7 @@
 		<title>Web Services Manager</title>
 		<phone-1>707-526-8635</phone-1>
 		<phone-2></phone-2>
-		<email>tomas.chadsey@pressdemocrat.com</email>	
+		<email>tomas.chadsey@pressdemocrat.com</email>
+		<pic></pic>
 	</entry>
 </contacts>
