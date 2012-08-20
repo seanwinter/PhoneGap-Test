@@ -33,7 +33,7 @@ function parseXml(xml)
 			var html = '';
 			//populate variable HTML with data attributes and markup
 			html = '<div class="employee-data"><h3>' + $(this).attr('data-first') + ' ' + $(this).attr('data-last') + '</h3>';
-			html += '<img class="img-portrait" src="/assets/images/portraits/' + $(this).attr('data-pic') + '"></div>';
+			html += '<img class="img-portrait" src="assets/images/portraits/' + $(this).attr('data-pic') + '"></div>';
 			
 			//build final html
 			$('#details #detail-content').html(html);
