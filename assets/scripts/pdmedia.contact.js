@@ -33,9 +33,17 @@ function parseXml(xml)
 			var html = '';
 			//populate variable HTML with data attributes and markup
 			html = '<div class="employee-data"><h3>' + $(this).attr('data-first') + ' ' + $(this).attr('data-last') + '</h3>';
-			html += '<img class="img-portrait" src="assets/images/portraits/' + $(this).attr('data-pic') + '"></div>';
+			html += '<img class="img-portrait" src="assets/images/portraits/' + $(this).attr('data-pic') + '">';
+			html += '<ul data-role="listview" data-inset="true">';
+			html += '<li>Title: ' + $(this).attr('data-title') + '</li>';
+			html += '<li>Department: ' + $(this).attr('data-dept') + '</li>';
+			html += '<li>Phone 1: ' + $(this).attr('data-phone1') + '</li>';
+			html += '<li>Phone 2: ' + $(this).attr('data-phone2') + '</li>';
+			html += '<li>Email: ' + $(this).attr('data-email') + '</li>';
+			html += '</ul></div>';
 			
-			//build final html
+			
+			//build details html
 			$('#details #detail-content').html(html);
 			});
 	});
