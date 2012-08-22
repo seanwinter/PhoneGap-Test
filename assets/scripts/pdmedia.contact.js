@@ -4,7 +4,8 @@ $(document).ready(function()
     type: "GET",
     url: "assets/data/contacts.xml",
     dataType: "xml",
-    success: parseXml
+    success: parseXml,
+		complete: function(){}
   });
 });
 
@@ -12,7 +13,7 @@ function parseXml(xml)
 {
 	$(xml).find('entry').each(function()
 	{ 
-		//populate variables with employee information
+		//populate variables with employee information from XML
 		var fname = $(this).find('f-name').text(),
 		lname = $(this).find('l-name').text(),
 		phone_1 = $(this).find('phone-1').text(),
@@ -30,21 +31,33 @@ function parseXml(xml)
 	});
 	$('#content li a').each(function(){
 		$(this).click(function(){
-			var html = '';
+						
+			//clear html variable for new selection
+			var html = '',
+			ul_list;
+
+
 			//populate variable HTML with data attributes and markup
-			html = '<div class="employee-data"><h3>' + $(this).attr('data-first') + ' ' + $(this).attr('data-last') + '</h3>';
+			html = '<h3>' + $(this).attr('data-first') + ' ' + $(this).attr('data-last') + '</h3>';
 			html += '<img class="img-portrait" src="assets/images/portraits/' + $(this).attr('data-pic') + '">';
-			html += '<ul data-role="listview" data-inset="true">';
-			html += '<li>Title: ' + $(this).attr('data-title') + '</li>';
-			html += '<li>Department: ' + $(this).attr('data-dept') + '</li>';
-			html += '<li>Phone 1: ' + $(this).attr('data-phone1') + '</li>';
-			html += '<li>Phone 2: ' + $(this).attr('data-phone2') + '</li>';
-			html += '<li>Email: ' + $(this).attr('data-email') + '</li>';
-			html += '</ul></div>';
+			//html += '<ul data-role="listview" data-inset="true" id="emp-details"></ul>';
 			
+			ul_list = '<li>Title: ' + $(this).attr('data-title') + '</li>';
+			ul_list += '<li>Department: ' + $(this).attr('data-dept') + '</li>';
+			ul_list += '<li>Phone 1: ' + $(this).attr('data-phone1') + '</li>';
+			ul_list += '<li>Phone 2: ' + $(this).attr('data-phone2') + '</li>';
+			ul_list += '<li>Email: ' + $(this).attr('data-email') + '</li>';
+					
 			
 			//build details html
 			$('#details #detail-content').html(html);
+			$('#emp-details').html(ul_list).listview('refresh', true);			
 			});
 	});
+
+	$('[data-role="page"]').bind('pageshow', function () {
+    //refresh the listview on the current page (if it exists)
+    //$('#emp-details').listview();
+	});
+
 }
