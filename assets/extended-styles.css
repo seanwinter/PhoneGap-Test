@@ -1,8 +1,11 @@
 /* CSS Document */
 .logo{background:url('images/logo.png') no-repeat;height:45px;margin:3px 0 3px 10px}
-
+.clear{clear:both}
 .employee-data{}
 .img-portrait{width:20%}
+#detail-content{}
+#emp-details{width:49%;}
+#emp-img{width:49%}
 /* BEING MEDIA QUERIES  */
 
 /* Smartphones (portrait and landscape) ----------- */

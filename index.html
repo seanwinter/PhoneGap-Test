@@ -33,7 +33,7 @@
 
 <!-- Contacts -->
 
-<div data-role="page" id="contacts">
+<div data-role="page" id="contacts" data-add-back-btn="true">
 	<div data-role="header">
 		<h1>Contact List</h1>
 	</div>
@@ -81,9 +81,11 @@
 		<h1>Details</h1>
 	</div>
 	<div data-role="content" id="detail-content">
+  	<div id="emp-img"></div>
+  	<ul data-role="listview" data-inset="true" id="emp-details">
+	  </ul>
+    <div class="clear"></div>
 	</div>
-  <ul data-role="listview" data-inset="true" id="emp-details">
-  </ul>
 	<div data-role="footer">
 		<h4>Page Footer</h4>
 	</div>

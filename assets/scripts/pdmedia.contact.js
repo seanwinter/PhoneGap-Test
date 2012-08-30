@@ -7,6 +7,13 @@ $(document).ready(function()
     success: parseXml,
 		complete: function(){}
   });
+	$("#details").live(
+	"pageshow",
+	function (event) {
+			//refresh the ul to show styles appropriately
+		$('ul#emp-details').listview('refresh', true);
+	}
+	);
 });
 
 function parseXml(xml)
@@ -31,33 +38,25 @@ function parseXml(xml)
 	});
 	$('#content li a').each(function(){
 		$(this).click(function(){
-						
-			//clear html variable for new selection
-			var html = '',
-			ul_list;
-
-
+			
+			var html = '', ul_list = '';
+			
 			//populate variable HTML with data attributes and markup
 			html = '<h3>' + $(this).attr('data-first') + ' ' + $(this).attr('data-last') + '</h3>';
 			html += '<img class="img-portrait" src="assets/images/portraits/' + $(this).attr('data-pic') + '">';
-			//html += '<ul data-role="listview" data-inset="true" id="emp-details"></ul>';
 			
 			ul_list = '<li>Title: ' + $(this).attr('data-title') + '</li>';
 			ul_list += '<li>Department: ' + $(this).attr('data-dept') + '</li>';
 			ul_list += '<li>Phone 1: ' + $(this).attr('data-phone1') + '</li>';
 			ul_list += '<li>Phone 2: ' + $(this).attr('data-phone2') + '</li>';
-			ul_list += '<li>Email: ' + $(this).attr('data-email') + '</li>';
-					
+			ul_list += '<li>Email: ' + $(this).attr('data-email') + '</li>';					
 			
 			//build details html
-			$('#details #detail-content').html(html);
-			$('#emp-details').html(ul_list).listview('refresh', true);			
+			$('#details #detail-content #emp-img').html(html);
+			$('ul#emp-details').html(ul_list);
+			
 			});
-	});
-
-	$('[data-role="page"]').bind('pageshow', function () {
-    //refresh the listview on the current page (if it exists)
-    //$('#emp-details').listview();
+			
 	});
 
 }
