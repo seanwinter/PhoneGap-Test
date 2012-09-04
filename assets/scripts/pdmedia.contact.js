@@ -2,7 +2,7 @@ $.ajax({
     type: "GET",
     url: "assets/data/contacts.xml",
     dataType: "xml",
-    success: parseXml,
+    success: parseContacts,
 		complete: function(){}
 });
 	
@@ -13,7 +13,8 @@ $("#details").live(
 		$('ul#emp-details').listview('refresh', true);
 	}
 	);
-function parseXml(xml)
+	
+function parseContacts(xml)
 {
 	$(xml).find('entry').each(function()
 	{ 
@@ -31,16 +32,18 @@ function parseXml(xml)
 		//build employee list with specific info in data attributes
 		$('#contacts #content').append('<li><a href="#details" data-id="' + empID + '" data-first="' + fname + 
 		'" data-last="' + lname + '" data-phone1="' + phone_1 + '" data-phone2="' + phone_2 + '" data-phone2="' + phone_2 + '"' +
-		' data-title="' + title + '" data-dept="' + dept + '" data-email="' + email + '" data-pic="' + pic + '">' + fname + ' ' + lname + '</a></li>');
+		' data-title="' + title + '" data-dept="' + dept + '" data-email="' + email + '" data-pic="' + pic + '">' + 
+		'<img src="assets/images/portraits/' + pic + '" /><h3>' + fname + ' ' + lname + '</h3><p>Phone: ' + phone_1 + '</p></a></li>');
 	});
 	$('#content li a').each(function(){
 		$(this).click(function(){
 
 			var html = '', ul_list = '';
 			
-			//populate variable HTML with data attributes and markup
-			html = '<h3>' + $(this).attr('data-first') + ' ' + $(this).attr('data-last') + '</h3>';
-			html += '<img class="img-portrait" src="assets/images/portraits/' + $(this).attr('data-pic') + '">';
+			//populate variable HTML with data attributes and markup			
+			html = '<img class="img-portrait" src="assets/images/portraits/' + $(this).attr('data-pic') + '">';
+			html += '<h3>' + $(this).attr('data-first') + ' ' + $(this).attr('data-last') + '</h3>';
+			html += '<div class="clear"></div>';
 			
 			ul_list = '<li>Title: ' + $(this).attr('data-title') + '</li>';
 			ul_list += '<li>Department: ' + $(this).attr('data-dept') + '</li>';

@@ -1,11 +1,16 @@
 /* CSS Document */
 .logo{background:url('images/logo.png') no-repeat;height:45px;margin:3px 0 3px 10px}
 .clear{clear:both}
+
+.img-portrait{max-height:20%;float:left;}
+#emp-img h3{float:left;font-size:2em;margin-left:1em}
+
+#home-page ul li a{padding:20px 0 20px 20px}
+
 .employee-data{}
-.img-portrait{max-height:20%}
 #detail-content{}
 #emp-details{}
-#emp-img{}
+
 /* BEING MEDIA QUERIES  */
 
 /* Smartphones (portrait and landscape) ----------- */
