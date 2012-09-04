@@ -2,10 +2,10 @@
 .logo{background:url('images/logo.png') no-repeat;height:45px;margin:3px 0 3px 10px}
 .clear{clear:both}
 .employee-data{}
-.img-portrait{width:20%}
+.img-portrait{max-height:20%}
 #detail-content{}
-#emp-details{width:49%;}
-#emp-img{width:49%}
+#emp-details{}
+#emp-img{}
 /* BEING MEDIA QUERIES  */
 
 /* Smartphones (portrait and landscape) ----------- */
@@ -13,18 +13,21 @@
 and (min-device-width : 320px)
 and (max-device-width : 480px) {
 /* Styles */
+.img-portrait{}
 }
 
 /* Smartphones (landscape) ----------- */
 @media only screen
 and (min-width : 321px) {
 /* Styles */
+.img-portrait{}
 }
 
 /* Smartphones (portrait) ----------- */
 @media only screen
 and (max-width : 320px) {
 /* Styles */
+.img-portrait{}
 }
 
 /* iPads (portrait and landscape) ----------- */
@@ -50,7 +53,7 @@ and (min-device-width : 768px)
 and (max-device-width : 1024px)
 and (orientation : portrait) {
 /* Styles */
-}
+.img-portrait{}
 }
 
 /* Desktops and laptops ----------- */
@@ -71,6 +74,7 @@ and (min-width : 1824px) {
 only screen and (-webkit-min-device-pixel-ratio : 1.5),
 only screen and (min-device-pixel-ratio : 1.5) {
 /* Styles */
+.img-portrait{}
 }
 
 /* END MEDIA QUERIES */

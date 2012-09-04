@@ -1,21 +1,18 @@
-$(document).ready(function()
-{
-  $.ajax({
+$.ajax({
     type: "GET",
     url: "assets/data/contacts.xml",
     dataType: "xml",
     success: parseXml,
 		complete: function(){}
-  });
-	$("#details").live(
-	"pageshow",
+});
+	
+$("#details").live(
+	"pagebeforeshow",
 	function (event) {
 			//refresh the ul to show styles appropriately
 		$('ul#emp-details').listview('refresh', true);
 	}
 	);
-});
-
 function parseXml(xml)
 {
 	$(xml).find('entry').each(function()
@@ -38,7 +35,7 @@ function parseXml(xml)
 	});
 	$('#content li a').each(function(){
 		$(this).click(function(){
-			
+
 			var html = '', ul_list = '';
 			
 			//populate variable HTML with data attributes and markup
