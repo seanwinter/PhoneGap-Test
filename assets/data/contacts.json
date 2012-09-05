@@ -1,0 +1,26 @@
+{
+	 "contact": {
+		 "contacts": [
+				{
+					"f_name": "Sean",
+					"l_name": "Winter",
+					"dept": "Web",
+					"title": "Web Producer",
+					"phone_1": "707-526-8684",
+					"phone_2": "347-754-2839",
+					"email": "sean.winter@pressdemocrat.com",
+					"pic": "seanwinter2.JPG"
+				},
+				{
+					"f_name": "Tomas",
+					"l_name": "Chadsey",
+					"dept": "Web",
+					"title": "Web Services Manager",
+					"phone_1": "707-526-8635",
+					"phone_2": "",
+					"email": "tomas.chaadsey@pressdemocrat.com",
+					"pic": "tomas.jpg"
+				}
+			]
+	 }
+}
