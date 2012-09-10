@@ -2,9 +2,8 @@ $(document).ready(function(){
 	if(!window.localStorage.getItem('test')){
 		window.localStorage.setItem('test','we aint found shit');
 	}else{
-		alert('found variable');
 		//window.localStorage.removeItem('test');
-		//window.localStorage.setItem('test', 'replaced shit');
+		//window.localStorage.setItem('test', );
 	}	
 	console.log(window.localStorage.getItem('test'));
 	
